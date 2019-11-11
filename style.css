@@ -2,3 +2,33 @@
 
     text-align: center;
 }
+
+::-webkit-input-placeholder {
+    text-align: center;
+ }
+
+
+ #lengthdiv {
+
+    padding-top:20px;
+ }
+
+ #headermain{
+
+    font-weight: 500;
+ }
+
+ #copy {
+
+    width: 202.38px;
+ }
+ @media screen and (max-width: 400px) {
+
+#copy {
+
+    margin-top:20px;
+    
+} 
+}
+
+
