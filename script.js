@@ -4,7 +4,7 @@ var specialEl = document.getElementById("specialDiv");
 var numbersEl = document.getElementById("numbersDiv");
 var generateEl = document.getElementById("generate");
 var passwordEl = document.getElementById("passwordhtml");
-var lengthEl = document.getElementById("lengthhtml").value;
+var lengthEl = document.getElementById("lengthhtml");
 var copyEl = document.getElementById("copy")
 
 
@@ -17,7 +17,7 @@ var num = '0123456789';
 var special = '!@#$%^&*';
 var newPassword = '';
 
-var length = 50;
+
 
 
  function password(length) {
@@ -35,35 +35,40 @@ var length = 50;
  upperEl.addEventListener("click",function(){
 
     characters += upper;
-    console.log(characters);
+    
     
 });
 
 lowerEl.addEventListener("click",function(){
 
     characters += lower;
-    console.log(characters);
+    
 
 });
 
 specialEl.addEventListener("click",function(){
 
     characters += special;
-    console.log(characters);
+    
 });
 
 numbersEl.addEventListener("change",function(){
 
 
     characters += num;
-    console.log(characters);
+    
 });
 
 
 generateEl.addEventListener("click", function(){
-    
+
+    var length = lengthEl.value;
     passwordEl.innerText = (password(length));
-    console.log(length);
+
+    if(length===""){
+        alert("please insert length");
+    }
+
     
 });
 
