@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Password Generator</title>
     <link rel ="stylesheet" type="text/css" href="./reset.css">
+    <link rel ="stylesheet" type="text/css" href="./style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -18,7 +19,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src ="./main.js"></script>
+    
 </head>
 
 <body>
@@ -26,48 +27,50 @@
     <div class= "row">
         <div class="jumbotron col-12" >
         <h1 class="display-4">Password Generator</h1>
-        <div class="input-group">
+        <div class="input-group" >
                 <div class="input-group-prepend">
                   <span class="input-group-text">Password</span>
                 </div>
-                <textarea class="form-control" aria-label="With textarea"></textarea>
+                <textarea id="passwordhtml" class="form-control" aria-label="With textarea"></textarea>
               </div>
 
-              <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="lengthhtml">Length</span>
-                    </div>
-                    <textarea class="form-control" aria-label="With textarea"></textarea>
-                  </div>
-        
-        <div class="input-group mb-3">
+              <div class="input-group" >
                 <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <input type="checkbox" aria-label="Checkbox for following text input">
+                  <span class="input-group-text">Length</span>
+                </div>
+                <textarea id="lengthhtml" class="form-control" aria-label="With textarea"></textarea>
+              </div>
+
+              
+        
+        <div class="input-group mb-3" >
+                <div class="input-group-prepend">
+                  <div class="input-group-text" >
+                    <input id="upperDiv" type="checkbox" aria-label="Checkbox for following text input">
                   </div>
                 </div>
                 <h6 id="upperhtml">Uppercase letters</h6>
               </div>
-              <div class="input-group mb-3">
+              <div class="input-group mb-3" >
                     <div class="input-group-prepend">
                       <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
+                        <input id="lowerDiv" type="checkbox" aria-label="Checkbox for following text input">
                       </div>
                     </div>
                     <h6 id="lowerhtml">Lowercase letters</h6>
                   </div>
-                  <div class="input-group mb-3">
+                  <div class="input-group mb-3" >
                         <div class="input-group-prepend">
                           <div class="input-group-text">
-                            <input type="checkbox" aria-label="Checkbox for following text input">
+                            <input id="specialDiv" type="checkbox" aria-label="Checkbox for following text input">
                           </div>
                         </div>
                         <h6 id="specialhtml">Special Characters</h6>
                       </div>
-                      <div class="input-group mb-3">
+                      <div class="input-group mb-3" >
                             <div class="input-group-prepend">
                               <div class="input-group-text">
-                                <input type="checkbox" aria-label="Checkbox for following text input">
+                                <input id="numbersDiv" type="checkbox" aria-label="Checkbox for following text input">
                               </div>
                             </div>
                             <h6 id="numbershtml">Numbers</h6>
@@ -75,12 +78,16 @@
               
               
         <a class="btn btn-primary btn-lg" id="generate" href="#" role="button">Generate Password</a>
+        <a class="btn btn-primary btn-lg" id="copy" href="#" role="button">Copy Password</a>                 
+      
 
     </div>
     </div>
 
 
 </div>
+
+<script src ="./script.js"></script>
 </body>
 
 </html>

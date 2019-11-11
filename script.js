@@ -1,66 +1,77 @@
-var characters = '';
+var upperEl = document.getElementById("upperDiv");
+var lowerEl = document.getElementById("lowerDiv");
+var specialEl = document.getElementById("specialDiv");
+var numbersEl = document.getElementById("numbersDiv");
+var generateEl = document.getElementById("generate");
+var passwordEl = document.getElementById("passwordhtml");
+var lengthEl = document.getElementById("lengthhtml").value;
+var copyEl = document.getElementById("copy")
 
- var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
- var lower = 'abcdefghijklmnopqrstuvwxyz';
- var letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
- var num = '0123456789';
- var special = '!@#$%^&*';
- var newPassword = '';
+
+
+var characters = '';
+var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var lower = 'abcdefghijklmnopqrstuvwxyz';
+var letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var num = '0123456789';
+var special = '!@#$%^&*';
+var newPassword = '';
+
+var length = 50;
+
 
  function password(length) {
 
-     
      for (var i = 0; i < length; i++) {
          
          newPassword += characters.charAt(Math.floor(Math.random() * characters.length));
      }
-
+    
      return newPassword;
-
  }
 
 
- var length = prompt("how many characters");
- var question1 = prompt("would you like to make all letters uppercase?")
- var question2 = prompt("would you like to make all letters lowercase?")
- var question3 = prompt("would you like to include special characters?")
- var question4 = prompt("would you like to include numeric characters?")
+
+ upperEl.addEventListener("click",function(){
+
+    characters += upper;
+    console.log(characters);
+    
+});
+
+lowerEl.addEventListener("click",function(){
+
+    characters += lower;
+    console.log(characters);
+
+});
+
+specialEl.addEventListener("click",function(){
+
+    characters += special;
+    console.log(characters);
+});
+
+numbersEl.addEventListener("change",function(){
 
 
- 
- if (question1 === "yes") {
-
-     characters += upper;
- }
+    characters += num;
+    console.log(characters);
+});
 
 
- if (question2 === "yes") {
+generateEl.addEventListener("click", function(){
+    
+    passwordEl.innerText = (password(length));
+    console.log(length);
+    
+});
 
-     characters += lower;
- }
+copyEl.addEventListener("click", function(){
 
- if (question1 === "no" && question2 === "no") {
+    var selectpass = document.getElementById("passwordhtml");
 
-     characters = letters;
- }
+    selectpass.select();
+    document.execCommand("copy");
 
- if (question1 === "yes" && question2 === "yes") {
-
-     alert("You selected yes for 'all letters uppercase' and 'all letters lowercase', password will be a combination of both.")
- }
-
- if (question3 === "yes") {
-
-     characters += special;
-
- }
-
- if (question4 === "yes") {
-
-     characters += num;
- }
-
- alert(password(length)) 
-
-
-
+});
