@@ -1,2 +1,1 @@
-# passwordgenerator
-password generator
+https://karanjyot.github.io/passwordgenerator/

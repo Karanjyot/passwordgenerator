@@ -61,9 +61,9 @@ numbersEl.addEventListener("change",function(){
 
 
 generateEl.addEventListener("click", function(){
-
+    
     var length = lengthEl.value;
-    passwordEl.innerText = (password(length));
+    passwordEl.innerHTML = (password(length));
 
     if(length===""){
         alert("please insert length");
@@ -80,3 +80,5 @@ copyEl.addEventListener("click", function(){
     document.execCommand("copy");
 
 });
+
+
